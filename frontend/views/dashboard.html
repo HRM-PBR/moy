@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema de Gestión Refaccionaria</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <h1 class="nav-title">Sistema de Gestión Refaccionaria</h1>
+            <ul class="nav-menu">
+                <li><a href="/dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="/inventario.html">Inventario</a></li>
+                <li><a href="/ventas.html">Ventas</a></li>
+                <li><a href="#" id="logoutBtn" class="btn btn-secondary btn-small">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Bienvenido, <span id="userName">Usuario</span></h2>
+            </div>
+            
+            <div style="text-align: center; padding: 2rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary-color);">Panel de Control</h3>
+                <p style="color: var(--secondary-color); margin-bottom: 2rem;">
+                    Selecciona una opción del menú para comenzar
+                </p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <a href="/inventario.html" class="card" style="text-decoration: none; display: block; transition: transform 0.3s;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">📦 Inventario</h4>
+                        <p style="color: var(--secondary-color); font-size: 0.875rem;">
+                            Gestiona los productos de la refaccionaria
+                        </p>
+                    </a>
+                    
+                    <a href="/ventas.html" class="card" style="text-decoration: none; display: block; transition: transform 0.3s;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">💰 Ventas</h4>
+                        <p style="color: var(--secondary-color); font-size: 0.875rem;">
+                            Registra ventas y consulta el historial
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="developer-name">
+                <p>Desarrollado por: <strong>Miguel</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>
+

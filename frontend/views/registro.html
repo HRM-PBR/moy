@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Sistema de Gestión Refaccionaria</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .register-container {
+            background: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+        }
+        .register-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .register-subtitle {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+        }
+        .register-info {
+            background-color: #dbeafe;
+            border: 1px solid #bfdbfe;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            color: #1e40af;
+            font-size: 0.875rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .btn-register {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+        }
+        .developer-name {
+            margin-top: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h1 class="register-title">Sistema de Gestión</h1>
+        <p class="register-subtitle">Refaccionaria</p>
+        
+        <div class="register-info">
+            <strong>⚠️ Primera vez</strong><br>
+            Estás creando el primer usuario del sistema. Este será tu cuenta de administrador.
+        </div>
+        
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="nombre" class="form-label">Nombre completo *</label>
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre" 
+                    class="form-control" 
+                    required 
+                    placeholder="Ingresa tu nombre completo"
+                >
+            </div>
+            
+            <div class="form-group">
+                <label for="usuario" class="form-label">Usuario *</label>
+                <input 
+                    type="text" 
+                    id="usuario" 
+                    name="usuario" 
+                    class="form-control" 
+                    required 
+                    autocomplete="username"
+                    placeholder="Elige un nombre de usuario"
+                >
+            </div>
+            
+            <div class="form-group">
+                <label for="password" class="form-label">Contraseña *</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    class="form-control" 
+                    required 
+                    autocomplete="new-password"
+                    placeholder="Mínimo 6 caracteres"
+                    minlength="6"
+                >
+                <small style="color: var(--secondary-color); font-size: 0.75rem;">
+                    La contraseña debe tener al menos 6 caracteres
+                </small>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword" class="form-label">Confirmar contraseña *</label>
+                <input 
+                    type="password" 
+                    id="confirmPassword" 
+                    name="confirmPassword" 
+                    class="form-control" 
+                    required 
+                    autocomplete="new-password"
+                    placeholder="Confirma tu contraseña"
+                >
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-register" id="registerBtn">
+                Crear Cuenta
+            </button>
+        </form>
+        
+        <div id="alertContainer"></div>
+        
+        <div class="developer-name">
+            <p>Desarrollado por: <strong>Miguel</strong></p>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/registro.js"></script>
+</body>
+</html>
+

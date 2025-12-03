@@ -1,0 +1,30 @@
+{
+  "name": "sistema-gestion-refaccionaria",
+  "version": "1.0.0",
+  "description": "Sistema de Gestión Web para Refaccionaria - Proyecto Final",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "keywords": [
+    "refaccionaria",
+    "inventario",
+    "ventas",
+    "express",
+    "sqlite"
+  ],
+  "author": "Miguel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "sqlite3": "^5.1.6",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
+

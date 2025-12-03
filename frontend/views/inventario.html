@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario - Sistema de Gestión Refaccionaria</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <h1 class="nav-title">Sistema de Gestión Refaccionaria</h1>
+            <ul class="nav-menu">
+                <li><a href="/dashboard.html">Dashboard</a></li>
+                <li><a href="/inventario.html" class="active">Inventario</a></li>
+                <li><a href="/ventas.html">Ventas</a></li>
+                <li><a href="#" id="logoutBtn" class="btn btn-secondary btn-small">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">📦 Gestión de Inventario</h2>
+                <button class="btn btn-primary" id="btnNuevoProducto">+ Nuevo Producto</button>
+            </div>
+
+            <!-- Buscador -->
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="buscador" 
+                    class="form-control" 
+                    placeholder="Buscar por nombre, categoría o SKU..."
+                >
+                <button class="btn btn-secondary" id="btnLimpiarBusqueda">Limpiar</button>
+            </div>
+
+            <!-- Tabla de productos -->
+            <div class="table-container">
+                <table class="table" id="tablaProductos">
+                    <thead>
+                        <tr>
+                            <th data-sort="nombre">Nombre ↕</th>
+                            <th data-sort="categoria">Categoría ↕</th>
+                            <th data-sort="precio">Precio ↕</th>
+                            <th data-sort="stock">Stock ↕</th>
+                            <th data-sort="codigo_sku">SKU ↕</th>
+                            <th>Descripción</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyProductos">
+                        <tr>
+                            <td colspan="7" class="text-center">Cargando productos...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="developer-name">
+                <p>Desarrollado por: <strong>Miguel</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para crear/editar producto -->
+    <div class="modal" id="modalProducto">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Nuevo Producto</h3>
+                <button class="modal-close" id="btnCerrarModal">&times;</button>
+            </div>
+            
+            <form id="formProducto">
+                <input type="hidden" id="productoId">
+                
+                <div class="form-group">
+                    <label for="nombre" class="form-label">Nombre *</label>
+                    <input type="text" id="nombre" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria" class="form-label">Categoría *</label>
+                    <input type="text" id="categoria" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="precio" class="form-label">Precio *</label>
+                    <input type="number" id="precio" class="form-control" step="0.01" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="stock" class="form-label">Stock *</label>
+                    <input type="number" id="stock" class="form-control" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="codigo_sku" class="form-label">Código SKU *</label>
+                    <input type="text" id="codigo_sku" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion" class="form-label">Descripción</label>
+                    <textarea id="descripcion" class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="d-flex gap-2 justify-between">
+                    <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/inventario.js"></script>
+</body>
+</html>
+
